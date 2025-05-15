@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()">
+    <label>
+      Person ID:<br />
+      <input type="text" [(ngModel)]="formData.person_id" name="person_id" required />
+    </label>
+    <br />
+    <label>
+      Document ID:<br />
+      <input type="text" [(ngModel)]="formData.document_id" name="document_id" required />
+    </label>
+    <br />
+    <label>
+      SSN:<br />
+      <input type="text" [(ngModel)]="formData.ssn" name="ssn" required />
+    </label>
+    <br />
+    <label>
+      Health Conditions:<br />
+      <input type="text" [(ngModel)]="formData.health_conditions" name="health_conditions" required />
+    </label>
+    <br />
+    <label>
+      Author:<br />
+      <input type="email" [(ngModel)]="formData.author" name="author" required />
+    </label>
+    <br />
+    <label>
+      Creation Date:<br />
+      <input type="datetime-local" [(ngModel)]="formData.creation_date" name="creation_date" required />
+    </label>
+    <br /><br />
+    <button type="submit">{{initialData ? 'Update' : 'Create'}}</button>
+    <button type="button" (click)="onCancel()" *ngIf="initialData">Cancel</button>
+  </form>
+  

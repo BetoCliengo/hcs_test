@@ -1,0 +1,54 @@
+# HCS CRUD Application
+
+This repository contains a **backend** (Node.js + Express + MongoDB) and a **frontend** (Angular) application to perform CRUD operations on health claim documents. It includes audit tracking fields and supports soft deletes.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Backend Setup and Run](#backend-setup-and-run)
+- [Frontend Setup and Run](#frontend-setup-and-run)
+- [Running Backend Tests](#running-backend-tests)
+- [API Endpoints](#api-endpoints)
+- [Notes](#notes)
+- [License](#license)
+
+---
+
+## Features
+
+- Create, Read, Update, and Soft Delete health claim documents
+- Audit columns: track author, creation date, who deleted and when
+- Soft delete implementation to mark records as deleted instead of removing
+- Clean REST API backend with Express and Mongoose
+- Angular frontend with components for listing, creating, editing, and viewing documents
+- Unit tests for backend API with Jest and in-memory MongoDB
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- [MongoDB](https://www.mongodb.com/) running locally or a MongoDB connection URI
+- [Angular CLI](https://angular.io/cli) (for frontend development)
+- npm or yarn package manager
+
+---
+
+## Backend Setup and Run
+
+### 1. Install dependencies
+
+From the backend root directory, run:
+
+```bash
+npm install
+```
+
+### 2. Run the server
+
+```bash
+npm start
+    

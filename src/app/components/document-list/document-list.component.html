@@ -1,0 +1,10 @@
+<ul>
+    <li *ngIf="documents.length === 0">No documents found.</li>
+    <li *ngFor="let doc of documents">
+      <b>{{doc.person_id}}</b> - {{doc.document_id}} - {{doc.health_conditions}}
+      <button (click)="view.emit(doc._id!)">View</button>
+      <button (click)="edit.emit(doc)">Edit</button>
+      <button (click)="delete.emit(doc._id!)">Delete</button>
+    </li>
+  </ul>
+  

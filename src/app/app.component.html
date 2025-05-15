@@ -1,0 +1,30 @@
+<div style="margin: 20px;">
+    <h1>HCS CRUD Angular Frontend</h1>
+  
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error" style="color:red;">{{error}}</div>
+  
+    <h2>Documents</h2>
+    <app-document-list
+      [documents]="documents"
+      (view)="viewDocument($event)"
+      (edit)="startEdit($event)"
+      (delete)="softDeleteDocument($event)"
+    ></app-document-list>
+  
+    <app-document-details
+      *ngIf="selectedDoc && !isEditing"
+      [document]="selectedDoc"
+      (close)="selectedDoc = undefined"
+    ></app-document-details>
+  
+    <div style="margin-top: 20px;">
+      <h2>{{isEditing ? 'Edit Document' : 'Create Document'}}</h2>
+      <app-document-form
+        [initialData]="isEditing ? selectedDoc : undefined"
+        (submit)="isEditing ? updateDocument($event) : createDocument($event)"
+        (cancel)="cancelForm()"
+      ></app-document-form>
+    </div>
+  </div>
+  

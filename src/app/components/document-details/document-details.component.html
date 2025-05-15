@@ -1,0 +1,6 @@
+<div *ngIf="document" style="margin-top:20px;">
+    <h3>Document Details</h3>
+    <pre>{{document | json}}</pre>
+    <button (click)="close.emit()">Close</button>
+  </div>
+  
