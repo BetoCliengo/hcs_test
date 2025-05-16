@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const documentSchema = new mongoose.Schema(
   {
     person_id: { type: String, required: true },
+    provider_insurance_id: { type: String, required: true },
     document_id: { type: String, required: true },
     ssn: { type: String, required: true },
     health_conditions: { type: String, required: true },
@@ -13,7 +14,7 @@ const documentSchema = new mongoose.Schema(
     // Soft delete columns
     deleted: { type: Boolean, default: false },
     deleted_by: { type: String, default: null },
-    deleted_at: { type: Date, default: null }
+    deleted_at: { type: Date, default: null }    
   },
   { collection: 'claim' } // Specify the collection name
 );
